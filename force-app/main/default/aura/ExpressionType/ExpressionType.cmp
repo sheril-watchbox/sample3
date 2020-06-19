@@ -1,0 +1,6 @@
+<aura:component >
+	<aura:attribute name="childAttr" type="String" default="Parent" />
+    <aura:handler name="change" value="{!v.childAttr}" action="{!c.onChildAttrChange}"/>
+    <p>child : {!v.childAttr}</p>
+    <lightning:button onclick="{!c.onClick}" label="Submit"></lightning:button>
+</aura:component>

@@ -1,0 +1,62 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <!-- ########################### recordForm ##############################-->
+    <!--<aura:attribute name="fields" type="string[]" default="['NumberOfEmployees']"/>
+    <lightning:card title="Data Service">
+        <lightning:recordForm recordId="0012x000004G8hDAAS"
+                              objectApiName="Account"
+                              layoutType="Compact"
+                              mode="readonly"
+                              fields="{!v.fields}"
+                              columns="2"/> 
+    </lightning:card> -->
+    <!--layoutType(Compact,Full)  mode(view,edit,readonly)-->
+    <!-- ########################### recordForm ##############################-->
+    <!-- ########################### recordViewForm ##############################-->
+    <!-- <lightning:recordViewForm recordId="0012x000004G8hDAAS" 
+                              objectApiName="Account">
+        <div class="slds-grid">
+            <div class="slds-col slds-size_2-of-3">
+                <lightning:outputfield fieldName="Name"/>
+                <lightning:outputfield fieldName="Phone"/>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <lightning:outputfield fieldName="Industry"/>
+                <lightning:outputfield fieldName="AnnualRevenue"/>
+            </div>
+        </div>
+    </lightning:recordViewForm> -->
+    <!-- ########################### recordViewForm ##############################-->
+    <!-- ########################### recordData: starts ##########################-->
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+    <aura:attribute name="fields" type="string[]" 
+                    default="['Name','Description','Phone','Industry','BillingCity','BillingState']"/>
+    
+    <force:recordData aura:id="recordLoader"
+                      recordId="0012x000004G8hDAAS"
+                      fields="{!v.fields}"
+                      targetFields="{!v.simpleRecord}"
+                      targetError="{!v.recordError}"
+                      recordUpdated="{!c.handleRecordUpdated}" />
+    
+    <div class="Record Details"> 
+        <lightning:card iconName="standard:account" title="{!v.simpleRecord.Name}" >
+            <div class="slds-p-horizontal--small">
+                <p class="slds-text-heading--small">
+                    <lightning:formattedText title="Billing City" 
+                                             value="{!v.simpleRecord.BillingCity}" />
+                </p>
+                <p class="slds-text-heading--small">
+                    <lightning:formattedText title="Billing State" 
+                                             value="{!v.simpleRecord.BillingState}" />
+                </p>
+            </div>
+        </lightning:card>
+    </div>
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+        <div class="recordError">
+            {!v.recordError}</div>
+    </aura:if>
+    <!-- ########################### recordData: ends ##########################-->
+</aura:component>

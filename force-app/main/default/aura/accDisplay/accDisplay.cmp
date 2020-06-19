@@ -1,0 +1,23 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="accountRecord" type="object"/>
+    <aura:attribute name="simpleAccountRecord" type="object"/>
+    <aura:attribute name="error" type="String"/>
+    
+    <force:recordData recordId="{!v.recordId}"
+                      aura:id="accountRecord"
+                      layoutType="FULL"
+                      mode="VIEW"
+                      targetRecord="{!v.simpleAccountRecord}"
+                      targetFields="{!v.accountRecord}"
+                      targetError="{!v.error}"
+                      />
+    <lightning:card iconName="standard:account" title="{!v.accountRecord.Name }">
+        <div class="slds-p-horizontal--small">
+            <p class="slds-text-heading--small">
+                <lightning:formattedText title="Industry" value="{!v.accountRecord.Industry}" /></p>
+            <p class="slds-text-heading--small">
+                <lightning:formattedText title="Description " value="{!v.accountRecord.Description}" /></p>
+             <p><lightning:formattedPhone value="{!v.accountRecord.Phone}" title="Phone"></lightning:formattedPhone></p>
+        </div>
+    </lightning:card>
+</aura:component>

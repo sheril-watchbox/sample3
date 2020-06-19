@@ -1,0 +1,4 @@
+<aura:component >
+    <aura:handler event="c:ApplicationEvent" action="{!c.handleAction}"/>
+    {!v.body}
+</aura:component>

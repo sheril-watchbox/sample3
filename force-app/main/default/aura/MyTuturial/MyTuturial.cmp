@@ -1,0 +1,10 @@
+<aura:component >
+    <div class="slds-p-around_small">
+        <p class="red">Test</p>
+        <p style="background-color:white;color:yellow">Test</p>
+        <p>Test</p>
+        <p>Test</p>
+        <p>Test</p>
+        
+    </div>
+</aura:component>

@@ -1,0 +1,12 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" 
+access="global" >
+    
+    <aura:attribute name="subject" type="string" default="Test"></aura:attribute>
+    <aura:attribute name="greeting" type="string" default="Hello"></aura:attribute>
+    <aura:attribute name="Name" type="String[]"/>
+    <p> I am proficient in JavaScript</p>
+    
+    <h1>Subject is {!v.subject}</h1>
+    <h3>Greeting is {!v.greeting}</h3>
+    
+</aura:component>

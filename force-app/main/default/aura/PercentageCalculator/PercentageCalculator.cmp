@@ -1,0 +1,29 @@
+<aura:component >
+    <aura:attribute name="wholeNumber" type="Integer" access="public"/>
+    <aura:attribute name="percentage" type="Integer" access="global"/>
+    <div class="slds-p-around_small">
+        <lightning:input type="Number" label="Enter a number" value="{!v.wholeNumber}"/>
+        <lightning:input type="Number" label="Enter a percentage" value="{!v.percentage}"
+                         formatter="percent-fixed"/>
+        
+        <br/>
+        Result : {!div(mult(v.wholeNumber,v.percentage),100)}
+        Result {!div((v.wholeNumber * v.percentage),100)}
+    </div>
+    
+    
+    <!-- Sample Attribute type-->
+    <aura:attribute name="color" type="String[]" access="global"
+                    default="['red','Yellow','Blue']"/>
+    <aura:attribute name="colr" type="List" access="global"
+                    default="['red','Yellow','Blue']"/>
+    <aura:iteration items="{!v.color}" var="col">
+        <div>{!col}</div>
+    </aura:iteration>
+    <br/>
+    <!-- Loghtning base component methods -->
+    <aura:attribute name="name" type="string" default="hello"/>
+    <lightning:input aura:id="age" label="Age"/>
+    <lightning:button label="Check the value" onclick="{!c.onclickFun}"/>
+    
+</aura:component>

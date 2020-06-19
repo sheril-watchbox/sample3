@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <lightning:button label="Event Trigger" onclick="{!c.triggerEvent}"
+                      variant="brand" name="btnTrigger"
+                      aura:id=""></lightning:button>
+    <!-- Button Example -->
+    <Lightning:button label="New" name="new" onclick="{!c.sameEventTrigger}"></Lightning:button>
+    <Lightning:button label="Save" name="save" onclick="{!c.sameEventTrigger}"></Lightning:button>
+    <Lightning:button label="Edit" name="edit" onclick="{!c.sameEventTrigger}"></Lightning:button>
+    <Lightning:button label="Delete" name="delete" onclick="{!c.sameEventTrigger}"></Lightning:button>
+    <Lightning:button label="Default" name="Default" onclick="{!c.sameEventTrigger}"></Lightning:button>
+    <!-- Tab Example -->
+    <lightning:tabset>
+    	<lightning:tab label="Tab 1" id="tab1" onactive="{!c.onActiveTabClick}"></lightning:tab>
+        <lightning:tab label="Tab 2" id="tab2" onactive="{!c.onActiveTabClick}"></lightning:tab>
+    </lightning:tabset>
+    
+    <lightning:button label="Toast Example" onclick="{!c.toastEx}" name="toast"></lightning:button>
+</aura:component>

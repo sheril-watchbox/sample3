@@ -1,0 +1,13 @@
+<aura:component >
+    <aura:attribute name="ar" type="String"></aura:attribute>
+	<lightning:button label="Toogle" variant="brand"
+                      onclick="{!c.toogleClick}"></lightning:button>
+    <p aura:id="text">U can see me</p>
+    {!version}
+    
+    <lightning:input label="{!$Label.c.FirstName}" placeholder="{!$Label.c.FirstName}"/>
+   
+   Dynamic label from JS :  {!v.ar}
+    
+	<p>{!format($Label.c.FirstName, v.ar)}</p>
+</aura:component>

@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,lightning:isUrlAddressable"
+                controller="BeerSearchApexService">
+    <aura:attribute name="recordList" type="Beer__c"/>
+    <aura:handler name="searchEvent" event="c:searchEvent" action="{!c.eventHandler}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.eventHandler}"/>
+    <aura:handler name="updateCart" event="c:updateCartEvent" action="{!c.doUpdateCart}"/>
+    <div>
+        <c:HeaderComponent aura:id="header" TagLine="Beer" messsage="Search &amp; Order beer in an easy manner"/>
+    </div>
+    <div>
+        <c:BeerSearch/>
+    </div>
+    <div>
+        <c:BeerList recordList="{!v.recordList}"/>
+    </div>
+</aura:component>

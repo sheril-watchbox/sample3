@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="subject" type="String"/>
+    <aura:attribute name="greeting" type="string"/>
+    
+    Hello {!v.subject}
+    Test {!v.greeting}
+</aura:component>

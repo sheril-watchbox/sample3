@@ -1,0 +1,12 @@
+<aura:component controller="helloHTMLController">
+	<aura:attribute name='whom' type='String' default='world'></aura:attribute>
+    <aura:attribute name='favoriteColors' type='String[]'></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"></aura:handler>
+    Hello {!v.whom}
+    
+    <aura:iteration items="{!v.favoriteColors}" var="colr">
+    	<p>Colors are {!colr}</p>
+    </aura:iteration>
+    <lightning:button label="Update Color" onclick="{!c.updateColor}"></lightning:button>
+    
+</aura:component>

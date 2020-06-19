@@ -1,0 +1,6 @@
+<aura:component implements="force:lightningQuickAction,force:hasRecordId,force:hasSObjectName,force:appHostable,lightning:actionOverride">
+    {!v.recordId}
+    {! v.sObjectName}
+    <br/>
+    <lightning:button label="close" onclick="{!c.doClose}"/>
+</aura:component>

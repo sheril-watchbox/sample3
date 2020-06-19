@@ -1,0 +1,46 @@
+<aura:component >
+    <aura:attribute name="colorPalette" type="List" default="['Red','Yello']"></aura:attribute>
+    <aura:attribute name="mapSample" type="map" 
+                    default="{name:'Sheril'}"></aura:attribute>
+    
+    <aura:attribute name='num' type="List"></aura:attribute>
+    <aura:attribute name="detail" type="Aura.Component[]">
+       Trest
+    </aura:attribute>
+    Default value is: {!v.detail}
+    
+    <div class="white">
+        Hello HTML
+    </div>
+    <h2>Check out the style in this list.</h2>
+    <p>
+        <h1 class="test">Test</h1>
+    </p>
+    <ul>
+        <li class='red'>I'm red.</li>
+        <li class='blue'>I'm blue.</li>
+        <li class='green'>I'm green.</li>
+    </ul>
+    <br/><br/>
+    Attribute Example
+    <aura:iteration items="{!v.colorPalette}" var="s">
+        <p>color is {!s}</p> 
+    </aura:iteration>
+    Map Binding
+    {!v.mapSample.name}
+    
+    <lightning:button label='Get Numbers' onclick="{!c.getNumbers}"></lightning:button>
+    <aura:iteration items="{!v.num}" var="i">
+        <p>{!i}</p>
+    </aura:iteration>
+    <br></br>
+    Condition Statements
+    <aura:attribute name='edit' type='boolean' default="false"></aura:attribute>
+    <lightning:button aura:id="Btn" label="Check conditional Stt" onclick="{!c.checkStt}"></lightning:button>
+    <aura:if isTrue='{!v.edit}'>
+    	<lightning:button label="Hai"></lightning:button>
+        <aura:set attribute="else">
+        	Not an action
+        </aura:set>
+    </aura:if>
+</aura:component>

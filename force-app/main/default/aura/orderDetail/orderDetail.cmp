@@ -1,0 +1,51 @@
+<aura:component implements="lightning:isUrlAddressable">
+    <aura:attribute name="orderId" type="String"/>
+    
+    <aura:attribute name="record" type="object" />
+    <aura:attribute name="orderRecord" type="object"/>
+    <aura:attribute name="recordError" type="String"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <force:recordData aura:id="recordViewer"
+                      recordId="{!v.orderId}"
+                      layoutType="FULL"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.orderRecord}"
+                      targetError="{!v.recordError}"
+                      />
+    
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-standard-opportunity" title="opportunity">
+                             <lightning:icon iconName="custom:custom4"/>
+                        </span>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate" 
+                                          title="{!v.orderRecord.Name}">{!v.orderRecord.Name}</span>
+                                </h1>
+                            </div>
+                        </div>
+                        <p class="slds-page-header__name-meta">{!v.orderRecord.Name} - {!v.orderRecord.CreatedDate}</p>
+                     
+                        <p><lightning:formattedDateTime value="{!v.orderRecord.CreatedDate}"/></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <lightning:recordForm recordId="{!v.orderId}"
+							objectApiName="Beer_Order__c"     
+                              layoutType="Full"
+                              mode="readonly"
+                              columns="2"
+                          />
+    </div>
+</aura:component>

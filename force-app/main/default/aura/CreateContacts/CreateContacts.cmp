@@ -1,0 +1,12 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId"
+                access="global" controller="SaveListContact" >
+    
+    <aura:handler name="create" event="c:CreateContact" action="{!c.handleEvent}"/>
+    <aura:handler name="SelectedRecordEvent" event="c:SelectRecordEvent" action="{!c.handleEdit}"/>
+    <aura:attribute name="conList" type="Contact"/>
+    
+    <c:ContactCreateComponent aura:id="createContact"/>
+    <c:ContactReview contactRecords="{!v.conList}"/>
+    
+    <lightning:button label="Save All Contacts" onclick="{!c.saveContact}"/>
+</aura:component>

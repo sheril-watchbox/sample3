@@ -1,0 +1,3 @@
+<aura:component >
+    <c:childAction child="{!c.doHandler}"/>
+</aura:component>

@@ -1,0 +1,52 @@
+<aura:component >
+    <aura:attribute name="contactRecords" type="object"/>
+    <aura:registerEvent name="SelectedRecordEvent" type="c:SelectRecordEvent"/>
+    <aura:if isTrue="{!v.contactRecords.length > 0}">
+        <table class="slds-table slds-table--bordered">
+            <thead>
+                <tr class="slds-text-heading--label">               
+                    <th scope="col">
+                        <span class="slds-truncate">First Name</span>
+                    </th>
+                    <th scope="col">
+                        <span class="slds-truncate">Last Name</span>
+                    </th>
+                    <th scope="col">
+                        <span class="slds-truncate">Email</span>
+                    </th>
+                    <th scope="col">
+                        <span class="slds-truncate">Phone</span>
+                    </th>
+                    <th scope="col">
+                        <span class="slds-truncate">Title</span>
+                    </th>                
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.contactRecords}" var="items" indexVar="index">
+                    <tr class="slds-hint-parent"> 
+                        <td data-label="stage">
+                            <span class="slds-truncate"> {!items.FirstName}</span>
+                        </td>
+                        <td data-label="confidence">
+                            <span class="slds-truncate"> {!items.LastName}</span>
+                        </td>
+                        <td data-label="amount">
+                            <span class="slds-truncate">$ {!items.Email}</span>
+                        </td>
+                        <td data-label="contact">
+                            <span class="slds-truncate"> {!items.Phone}</span>
+                        </td>
+                        <td data-label="contact">
+                            <span class="slds-truncate"> {!items.Title}</span>
+                            &nbsp;&nbsp;
+                            <a href="javascript:void(0)" id="{!index}" onclick="{!c.removeRecord}">Remove</a>
+                            &nbsp;&nbsp;
+                            <a href="javascript:void(0)" id="{!index}" onclick="{!c.editRecord}">Edit</a>
+                        </td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </aura:if>
+</aura:component>

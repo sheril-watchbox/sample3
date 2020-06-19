@@ -1,0 +1,5 @@
+<aura:component >
+    <aura:attribute name="child" type="aura.action"/>
+    
+    <lightning:button label="Call Parent Method" onclick="{!v.child}"/>
+</aura:component>

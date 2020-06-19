@@ -1,0 +1,16 @@
+<aura:component >
+    <aura:attribute name="label" type="String"/>
+    <aura:attribute name="tabList" type="list" default="['Contact','Account','Case']"/>
+    
+    <lightning:tabset variant="vertical" selectedTabId="Case">
+        <lightning:tab label="Contact" id="Contact" onactive="{!c.active}">
+            {!v.label}
+        </lightning:tab>
+        <lightning:tab label="Account" id="Account" onactive="{!c.active}">
+            {!v.label}
+        </lightning:tab>
+        <lightning:tab label="Case" id="Case" onactive="{!c.active}">
+            {!v.label}
+        </lightning:tab>
+    </lightning:tabset>
+</aura:component>

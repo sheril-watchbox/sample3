@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="cartList" type="Beer__c[]"/>
+	<lightning:layout>
+        <lightning:layoutitem>
+            <lightning:icon iconName="utility:cart" size="large"/>
+            <span style="font-size:1.1rem;">{! v.cartList ? v.cartList.length : 0}</span>
+        </lightning:layoutitem>
+    </lightning:layout>
+</aura:component>

@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:handler event="c:aeEvent" action="{!c.handleApplicationEvent}"/>
+    <aura:attribute name="messageFromEvent" type="string"/>
+    <aura:attribute name="numEvents" type="Integer" default="0"/>
+    
+    Message from event : {!v.messageFromEvent} 
+    <br/><br/>
+    No. of items : {!v.numEvents}
+</aura:component>

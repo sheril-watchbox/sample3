@@ -1,0 +1,8 @@
+<!-- c:auraMethodCaller.cmp -->
+<aura:component >
+  
+    <c:auraMethod aura:id="child" />
+    
+    <lightning:button label="Call aura:method (server trip) in child component"
+        onclick="{! c.callAuraMethodServerTrip}" />
+</aura:component>

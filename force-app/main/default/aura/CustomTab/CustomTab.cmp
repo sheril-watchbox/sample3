@@ -1,0 +1,4 @@
+<aura:component implements="force:appHostable" >
+	 <!--c:EventExampleCmp/-->
+    <c:quickAdd/>
+</aura:component>

@@ -1,0 +1,6 @@
+<aura:component >
+	<aura:attribute name="header" type="aura.component[]"></aura:attribute>
+    
+    {!v.header}
+    {!v.body}
+</aura:component>

@@ -1,0 +1,5 @@
+<aura:component >
+    <aura:handler name="sourceComponent" event="c:ComponentEvent" action="{!c.handleEvent}"
+                  includeFacets="true"/>
+   {!v.body}
+</aura:component>

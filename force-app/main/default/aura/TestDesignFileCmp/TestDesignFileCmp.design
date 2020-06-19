@@ -1,0 +1,11 @@
+<design:component label="Hello World">
+    <design:attribute name="subject" label="Subject"
+                      description="Name of the person you want to greet"></design:attribute>
+    <design:attribute name="greeting" label="Greeting"></design:attribute>
+    <!--<design:attribute name="type" label="Type" datasource="value1,value2,value3"/ > -->
+    <design:supportedFormFactors>
+        <design:supportedFormFactor type="Large"/>
+        <design:supportedFormFactor type="Small"/>
+    </design:supportedFormFactors>
+    
+</design:component>
